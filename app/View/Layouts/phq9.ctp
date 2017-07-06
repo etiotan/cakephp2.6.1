@@ -14,7 +14,7 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-$phq9 = 'Inkblot: ';
+$phq9 = 'Inkblot';
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,25 +25,28 @@ $phq9 = 'Inkblot: ';
 		<?php echo $this->fetch('title'); ?>
 	</title>
 	<?php
-    echo $this->Html->css('materialize/css/materialize.min');
-
 
 		echo $this->fetch('meta');
+    echo $this->Html->css('materialize.min');
 		echo $this->fetch('css');
-		echo $this->fetch('script');
+
 	?>
 </head>
 
-<body>
+<body class='center-align'>
 	<div>
 
 		<div>
 			<?php echo $this->fetch('content'); ?>
 		</div>
 
-		<div id='footer'>
-      <h1><?php echo $this->Html->link('Inkblot', 'https://inkblottherapy.com/'); ?></h1>
-		</div>
+
+    <?php
+    echo $this->Html->script('jquery-3.2.1.min');
+    echo $this->Html->script('materialize.min');
+		echo $this->fetch('script');
+    ?>
+
 	</div>
 	<?php echo $this->element('sql_dump'); ?>
 </body>
